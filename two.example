@@ -1,0 +1,21 @@
+package example;
+abstract class Abstract{
+	int x=10;
+	abstract void add();
+	void mul() {
+		System.out.println("Mul ="+(x+2));
+	}
+}
+class B extends Abstract{
+@Override 
+void add() {
+	System.out.println("Add="+(x+2));
+}
+}
+public class Two {
+public static void main(String[] args) {
+	Abstract obj=new B();
+	obj.add();
+	obj.mul();
+}
+}
