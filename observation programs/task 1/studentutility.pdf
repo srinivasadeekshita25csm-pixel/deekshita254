@@ -616,6 +616,39 @@ public class StudentUtilityProgram {
 
                 int x = sc.nextInt(); 
 
+===== STUDENT UTILITY PROGRAM =====
+
+1. Student Information
+
+2. Even or Odd
+
+3. Largest of Three Numbers
+
+4. Grade
+
+5. Day of the Week
+
+6. Multiplication Table
+
+7. Numbers from 1 to N
+
+8. Sum of First N Natural Numbers
+
+9. Fibonacci Series
+
+10. Factorial
+
+11. Prime Number
+
+12. Maximum of Two Numbers
+
+13. Area of Circle
+
+14. Exit
+
+Enter your choice:
+
+
  
 
                 System.out.print("Enter Second Number: "); 
