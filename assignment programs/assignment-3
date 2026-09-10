@@ -1,0 +1,69 @@
+package javaassignment;
+
+import java.util.Scanner;
+
+public class StringBuilderOps {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder("Hello World");
+
+        while (true) {
+            System.out.println("\n--- StringBuilder Operations ---");
+            System.out.println("1. append()");
+            System.out.println("2. insert()");
+            System.out.println("3. replace()");
+            System.out.println("4. delete()");
+            System.out.println("5. deleteCharAt()");
+            System.out.println("6. reverse()");
+            System.out.println("7. capacity()");
+            System.out.println("8. length()");
+            System.out.println("9. charAt()");
+            System.out.println("10. setCharAt()");
+            System.out.println("11. substring()");
+            System.out.println("12. indexOf()");
+            System.out.println("13. lastIndexOf()");
+            System.out.println("14. ensureCapacity()");
+            System.out.println("15. trimToSize()");
+            System.out.println("16. getChars()");
+            System.out.println("17. codePointAt()");
+            System.out.println("18. codePointBefore()");
+            System.out.println("19. codePointCount()");
+            System.out.println("20. subSequence()");
+            System.out.println("0. Exit");
+            System.out.print("Choose: ");
+
+            int choice = sc.nextInt();
+            sc.nextLine();
+
+            switch (choice) {
+                case 1: sb.append(" Java"); System.out.println(sb); break;
+                case 2: sb.insert(6,"Mutable "); System.out.println(sb); break;
+                case 3: sb.replace(6,12,"Builder"); System.out.println(sb); break;
+                case 4: sb.delete(6,13); System.out.println(sb); break;
+                case 5: sb.deleteCharAt(0); System.out.println(sb); break;
+                case 6: sb.reverse(); System.out.println(sb); sb.reverse(); break;
+                case 7: System.out.println(sb.capacity()); break;
+                case 8: System.out.println(sb.length()); break;
+                case 9: System.out.println(sb.charAt(4)); break;
+                case 10: sb.setCharAt(0,'H'); System.out.println(sb); break;
+                case 11: System.out.println(sb.substring(0,5)); break;
+                case 12: System.out.println(sb.indexOf("World")); break;
+                case 13: System.out.println(sb.lastIndexOf("o")); break;
+                case 14: sb.ensureCapacity(50); System.out.println("Capacity ensured"); break;
+                case 15: sb.trimToSize(); System.out.println("Trimmed capacity"); break;
+                case 16: {
+                    char[] arr = new char[5];
+                    sb.getChars(0,5,arr,0);
+                    System.out.println(arr);
+                    break;
+                }
+                case 17: System.out.println(sb.codePointAt(1)); break;
+                case 18: System.out.println(sb.codePointBefore(2)); break;
+                case 19: System.out.println(sb.codePointCount(0,5)); break;
+                case 20: System.out.println(sb.subSequence(0,5)); break;
+                case 0: System.out.println("Exit"); return;
+                default: System.out.println("Invalid!");
+            }
+        }
+    }
+}
