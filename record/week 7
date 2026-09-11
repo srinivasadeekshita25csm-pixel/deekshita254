@@ -1,0 +1,53 @@
+Method Overriding – RBI, SBI, ICICI, PNB
+
+import java.util.Scanner;
+
+class RBI {
+    void getRateOfInterest() {
+        System.out.println("RBI rate of interest is: 4%");
+    }
+}
+
+class SBI extends RBI {
+    @Override
+    void getRateOfInterest() {
+        System.out.println("SBI rate of interest is: 7%");
+    }
+}
+
+class ICICI extends RBI {
+    @Override
+    void getRateOfInterest() {
+        System.out.println("ICICI rate of interest is: 8%");
+    }
+}
+
+class PNB extends RBI {
+    @Override
+    void getRateOfInterest() {
+        System.out.println("PNB rate of interest is: 6%");
+    }
+}
+
+public class BankDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the Bank name: ");
+        String name = sc.nextLine();
+
+        RBI bank;
+
+        if (name.equalsIgnoreCase("SBI"))
+            bank = new SBI();
+        else if (name.equalsIgnoreCase("ICICI"))
+            bank = new ICICI();
+        else if (name.equalsIgnoreCase("PNB"))
+            bank = new PNB();
+        else
+            bank = new RBI();
+
+        bank.getRateOfInterest();
+    }
+}
