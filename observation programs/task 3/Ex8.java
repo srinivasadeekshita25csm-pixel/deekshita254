@@ -1,17 +1,13 @@
-package exceptionex;
-import java.util.Arrays;
-import java.util.Iterator;
+package exceptions;
 
-public class IllegalStateExample {
-    public static void main(String[] args) {
-        try {
-            
-            Iterator<Integer> it = Arrays.asList(1, 2, 3).iterator();
+public class NF {
 
-            
-            it.remove(); 
-        } catch (IllegalStateException e) {
-            System.out.println("Caught IllegalStateException: " + e.getMessage());
-        }
-    }
-}
+	    public static void main(String[] args) {
+
+	        String number = "20abc";
+
+	        int total = Integer.parseInt(number);
+
+	        System.out.println("The total is:"+total);
+	    }
+	}
