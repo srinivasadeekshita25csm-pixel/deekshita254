@@ -1,11 +1,19 @@
-package exceptionex;
+package csm254;
 
-public class InterruptedExample {
-    public static void main(String[] args) {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            System.out.println("Error: Thread interrupted!");
-        }
-    }
-}
+public class IllegalState {
+	
+	    public static void main(String[] args) {
+
+	        try {
+	            java.util.Scanner sc = new java.util.Scanner(System.in);
+
+	            sc.close();
+
+	            sc.nextLine();
+	        }
+	        catch (java.lang.IllegalStateException e) {
+	            System.out.println("Scanner is already closed.");
+	        }
+	    }
+	}
+	   
