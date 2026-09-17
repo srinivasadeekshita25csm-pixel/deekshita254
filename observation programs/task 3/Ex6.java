@@ -1,12 +1,18 @@
-package exceptionex;
+package exceptions;
 
-import java.io.*;
-public class Ex7 {
-    public static void main(String[] args) {
-        try {
-            FileReader fr = new FileReader("nofile.txt");
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found!");
-        }
-    }
-}
+public class NegativeArray {
+
+	    public static void main(String[] args) {
+
+	        try {
+	            int size = -5;
+
+	            int arr[] = new int[size];
+
+	            System.out.println("Array created successfully");
+	        }
+	        catch (NegativeArraySizeException e) {
+	            System.out.println("Exception: Array size cannot be negative");
+	        }
+	    }
+	}
