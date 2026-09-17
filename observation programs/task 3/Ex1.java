@@ -1,12 +1,13 @@
-package exceptionex;
+ package exceptions;
 
-public class Ex2 {
-    public static void main(String[] args) {
-        try {
-            int[] arr = {1,2,3};
-            System.out.println(arr[5]);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Array index error!");
-        }
-    }
-}
+public class AIOOB {
+
+	    public static void main(String[] args) {
+
+	        int[] numbers = {10, 20, 30, 40, 50};
+
+	        System.out.println(numbers[0]);
+	        System.out.println(numbers[1]);
+	        System.out.println(numbers[5]);  // Exception
+	    }
+	}
