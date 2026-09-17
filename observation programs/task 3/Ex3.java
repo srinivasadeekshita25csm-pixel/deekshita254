@@ -1,11 +1,16 @@
-package exceptionex;
+package exceptions;
 
-public class Ex4 {
-    public static void main(String[] args) {
-        try {
-            int n = Integer.parseInt("abc");
-        } catch (NumberFormatException e) {
-            System.out.println("Number format error!");
-        }
-    }
-}
+public class ClassNotFound {
+	    public static void main(String[] args)
+	    {
+	        try
+	        {
+	            Class.forName("Student");
+	            System.out.println("Class found");
+	        }
+	        catch (ClassNotFoundException e)
+	        {
+	            System.out.println("Class not found");
+	        }
+	    }
+	}
