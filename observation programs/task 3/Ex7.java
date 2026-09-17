@@ -1,14 +1,11 @@
-package exceptionex;
+package exceptions;
 
-import java.io.*;
-public class Ex8 {
-    public static void main(String[] args) {
-        try {
-            FileWriter fw = new FileWriter("test.txt");
-            fw.write("Hello");
-            fw.close();
-        } catch (IOException e) {
-            System.out.println("IO error!");
-        }
-    }
-}
+public class NP {
+	
+	    public static void main(String[] args) {
+
+	        String name = null;
+
+	        System.out.println(name.length());  // Exception
+	    }
+	}
