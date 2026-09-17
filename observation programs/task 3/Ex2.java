@@ -1,12 +1,21 @@
-package exceptionex;
+package exceptions;
 
-public class Ex3 {
-    public static void main(String[] args) {
+public class ClassCast{
+	public static void main(String[] args) {
+
+        Object value = "Welcome to Paris";
+
         try {
-            String s = null;
-            System.out.println(s.length());
-        } catch (NullPointerException e) {
-            System.out.println("Null pointer!");
+            System.out.println("Value: " + value);
+
+            Integer number = (Integer) value;
+
+            System.out.println("Number: " + number);
         }
+        catch (ClassCastException e) {
+            System.out.println("Error: Cannot convert String into Integer.");
+        }
+
+        System.out.println("Program exit.");
     }
 }
