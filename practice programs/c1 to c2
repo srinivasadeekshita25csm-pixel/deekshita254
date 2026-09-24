@@ -1,0 +1,22 @@
+package implement;
+class Class2 {
+    void display() {
+        System.out.println("This is Class2.");
+    }
+}
+
+class Class1 extends Class2 {
+    void show() {
+        System.out.println("This is Class1.");
+    }
+}
+
+public class C1ToC2 {
+    public static void main(String[] args) {
+
+        Class1 obj = new Class1();
+
+        obj.display();   // Method from Class2
+        obj.show();      // Method from Class1
+    }
+}
