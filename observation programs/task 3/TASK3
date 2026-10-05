@@ -1,3 +1,4 @@
+package digitalpayment;
 
 interface PaymentService {
     void pay(String upiId, double amount);
