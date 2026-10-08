@@ -1,18 +1,12 @@
-package exceptions;
+package exceptionex;
 
-public class NegativeArray {
-
-	    public static void main(String[] args) {
-
-	        try {
-	            int size = -5;
-
-	            int arr[] = new int[size];
-
-	            System.out.println("Array created successfully");
-	        }
-	        catch (NegativeArraySizeException e) {
-	            System.out.println("Exception: Array size cannot be negative");
-	        }
-	    }
-	}
+public class Ex6 {
+    public static void main(String[] args) {
+        try {
+            Object o = "Hi";
+            Integer i = (Integer) o;
+        } catch (ClassCastException e) {
+            System.out.println("Class cast error!");
+        }
+    }
+}
