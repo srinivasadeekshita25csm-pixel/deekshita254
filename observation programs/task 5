@@ -1,0 +1,225 @@
+import java.util.*;
+
+public class CollectionDemo {
+    public static void main(String[] args) {
+
+        // ---------------- COLLECTION / LIST ----------------
+        System.out.println("===== LIST INTERFACE =====");
+
+        List<String> list = new ArrayList<>();
+
+        list.add("Java");
+        list.add("Python");
+        list.add("C");
+        list.add("Java");
+
+        System.out.println("List: " + list);
+        System.out.println("Size: " + list.size());
+        System.out.println("Contains Java: " + list.contains("Java"));
+        System.out.println("Element at index 1: " + list.get(1));
+
+        list.add(1, "C++");
+        System.out.println("After add(index): " + list);
+
+        list.set(2, "JavaScript");
+        System.out.println("After set(): " + list);
+
+        System.out.println("First index of Java: " + list.indexOf("Java"));
+        System.out.println("Last index of Java: " + list.lastIndexOf("Java"));
+
+        list.remove("C");
+        System.out.println("After remove(): " + list);
+
+        System.out.println("SubList: " + list.subList(0, 2));
+
+        // ---------------- SET ----------------
+        System.out.println("\n===== SET INTERFACE =====");
+
+        Set<Integer> set = new HashSet<>();
+
+        set.add(10);
+        set.add(20);
+        set.add(30);
+        set.add(20); // Duplicate ignored
+
+        System.out.println("Set: " + set);
+        System.out.println("Size: " + set.size());
+        System.out.println("Contains 20: " + set.contains(20));
+
+        set.remove(10);
+        System.out.println("After remove(10): " + set);
+
+        // ---------------- SORTED SET ----------------
+        System.out.println("\n===== SORTED SET INTERFACE =====");
+
+        SortedSet<Integer> sortedSet = new TreeSet<>();
+
+        sortedSet.add(40);
+        sortedSet.add(10);
+        sortedSet.add(30);
+        sortedSet.add(20);
+
+        System.out.println("Sorted Set: " + sortedSet);
+        System.out.println("First: " + sortedSet.first());
+        System.out.println("Last: " + sortedSet.last());
+        System.out.println("HeadSet(30): " + sortedSet.headSet(30));
+        System.out.println("TailSet(20): " + sortedSet.tailSet(20));
+        System.out.println("SubSet(20,40): " + sortedSet.subSet(20, 40));
+
+        // ---------------- NAVIGABLE SET ----------------
+        System.out.println("\n===== NAVIGABLE SET INTERFACE =====");
+
+        NavigableSet<Integer> navSet = new TreeSet<>();
+
+        navSet.add(10);
+        navSet.add(20);
+        navSet.add(30);
+        navSet.add(40);
+        navSet.add(50);
+
+        System.out.println("Navigable Set: " + navSet);
+        System.out.println("Lower(30): " + navSet.lower(30));
+        System.out.println("Floor(30): " + navSet.floor(30));
+        System.out.println("Ceiling(30): " + navSet.ceiling(30));
+        System.out.println("Higher(30): " + navSet.higher(30));
+        System.out.println("Descending Set: " + navSet.descendingSet());
+
+        // ---------------- QUEUE ----------------
+        System.out.println("\n===== QUEUE INTERFACE =====");
+
+        Queue<String> queue = new LinkedList<>();
+
+        queue.add("A");
+        queue.offer("B");
+        queue.offer("C");
+
+        System.out.println("Queue: " + queue);
+        System.out.println("Peek: " + queue.peek());
+        System.out.println("Element: " + queue.element());
+
+        queue.poll();
+        System.out.println("After poll(): " + queue);
+
+        // ---------------- DEQUE ----------------
+        System.out.println("\n===== DEQUE INTERFACE =====");
+
+        Deque<Integer> deque = new ArrayDeque<>();
+
+        deque.addFirst(20);
+        deque.addLast(30);
+        deque.offerFirst(10);
+        deque.offerLast(40);
+
+        System.out.println("Deque: " + deque);
+        System.out.println("Peek First: " + deque.peekFirst());
+        System.out.println("Peek Last: " + deque.peekLast());
+
+        deque.removeFirst();
+        deque.removeLast();
+
+        System.out.println("After removing first and last: " + deque);
+
+        // ---------------- MAP ----------------
+        System.out.println("\n===== MAP INTERFACE =====");
+
+        Map<Integer, String> map = new HashMap<>();
+
+        map.put(101, "Deekshita");
+        map.put(102, "Anu");
+        map.put(103, "Priya");
+
+        System.out.println("Map: " + map);
+        System.out.println("Value for key 101: " + map.get(101));
+        System.out.println("Contains key 102: " + map.containsKey(102));
+        System.out.println("Contains value Anu: " + map.containsValue("Anu"));
+        System.out.println("Keys: " + map.keySet());
+        System.out.println("Values: " + map.values());
+        System.out.println("Entries: " + map.entrySet());
+        System.out.println("Size: " + map.size());
+
+        map.remove(103);
+        System.out.println("After remove(103): " + map);
+
+        // ---------------- SORTED MAP ----------------
+        System.out.println("\n===== SORTED MAP INTERFACE =====");
+
+        SortedMap<Integer, String> sortedMap = new TreeMap<>();
+
+        sortedMap.put(3, "Three");
+        sortedMap.put(1, "One");
+        sortedMap.put(2, "Two");
+        sortedMap.put(4, "Four");
+
+        System.out.println("Sorted Map: " + sortedMap);
+        System.out.println("First Key: " + sortedMap.firstKey());
+        System.out.println("Last Key: " + sortedMap.lastKey());
+        System.out.println("Head Map(3): " + sortedMap.headMap(3));
+        System.out.println("Tail Map(2): " + sortedMap.tailMap(2));
+        System.out.println("Sub Map(2,4): " + sortedMap.subMap(2, 4));
+
+        // ---------------- NAVIGABLE MAP ----------------
+        System.out.println("\n===== NAVIGABLE MAP INTERFACE =====");
+
+        NavigableMap<Integer, String> navMap = new TreeMap<>();
+
+        navMap.put(10, "Ten");
+        navMap.put(20, "Twenty");
+        navMap.put(30, "Thirty");
+        navMap.put(40, "Forty");
+
+        System.out.println("Navigable Map: " + navMap);
+        System.out.println("Lower Key(30): " + navMap.lowerKey(30));
+        System.out.println("Floor Key(30): " + navMap.floorKey(30));
+        System.out.println("Ceiling Key(30): " + navMap.ceilingKey(30));
+        System.out.println("Higher Key(30): " + navMap.higherKey(30));
+        System.out.println("First Entry: " + navMap.firstEntry());
+        System.out.println("Last Entry: " + navMap.lastEntry());
+        System.out.println("Descending Map: " + navMap.descendingMap());
+
+        // ---------------- ITERATOR ----------------
+        System.out.println("\n===== ITERATOR INTERFACE =====");
+
+        List<Integer> numbers = new ArrayList<>();
+
+        numbers.add(10);
+        numbers.add(20);
+        numbers.add(30);
+        numbers.add(40);
+
+        Iterator<Integer> iterator = numbers.iterator();
+
+        System.out.print("Elements using Iterator: ");
+
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
+        }
+
+        System.out.println();
+
+        // ---------------- LIST ITERATOR ----------------
+        System.out.println("\n===== LIST ITERATOR INTERFACE =====");
+
+        List<String> names = new ArrayList<>();
+
+        names.add("A");
+        names.add("B");
+        names.add("C");
+
+        ListIterator<String> listIterator = names.listIterator();
+
+        System.out.print("Forward direction: ");
+
+        while (listIterator.hasNext()) {
+            System.out.print(listIterator.next() + " ");
+        }
+
+        System.out.print("\nBackward direction: ");
+
+        while (listIterator.hasPrevious()) {
+            System.out.print(listIterator.previous() + " ");
+        }
+
+        System.out.println();
+        System.out.println("Final List: " + names);
+    }
+}
