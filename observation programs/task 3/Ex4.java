@@ -1,18 +1,11 @@
-package csm254;
+package exceptionex;
 
-public class FileNotFound {
-
-	    public static void main(String[] args) {
-
-	        try {
-	            java.io.File file = new java.io.File("abc.txt");
-	            java.util.Scanner sc = new java.util.Scanner(file);
-
-	            System.out.println("File opened successfully.");
-	            sc.close();
-	        }
-	        catch (java.io.FileNotFoundException e) {
-	            System.out.println("File not found.");
-	        }
-	    }
-	}
+public class Ex4 {
+    public static void main(String[] args) {
+        try {
+            int n = Integer.parseInt("abc");
+        } catch (NumberFormatException e) {
+            System.out.println("Number format error!");
+        }
+    }
+}
