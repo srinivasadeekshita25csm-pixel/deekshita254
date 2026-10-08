@@ -1,167 +1,82 @@
-Classes and Objects – Farm Animals
+package javacore;
+class FarmAnimal {
 
-class Animal {
     String name;
     String place;
     String food;
-    String sound;
 
-    Animal(String name, String place, String food, String sound) {
+    // Default constructor
+    FarmAnimal() {
+        name = "Unknown";
+        place = "Farm";
+        food = "Grass";
+    }
+
+    // Parameterized constructor
+    FarmAnimal(String name, String place, String food) {
         this.name = name;
         this.place = place;
         this.food = food;
-        this.sound = sound;
     }
 
     void display() {
-        System.out.println("Animal : " + name);
-        System.out.println("Lives in : " + place);
-        System.out.println("Food : " + food);
-        System.out.println("Sound : " + sound);
-        System.out.println();
+        System.out.println("Animal: " + name);
+        System.out.println("Lives in: " + place);
+        System.out.println("Eats: " + food);
+    }
+
+   
+    void sound(String sound) {
+        System.out.println("Sound: " + sound);
+    }
+
+    // Method overloading
+    void sound(String sound, int times) {
+        System.out.println("Sound: " + sound);
+        System.out.println("Number of times: " + times);
     }
 }
-
 public class FarmAnimals {
     public static void main(String[] args) {
 
-        Animal cow = new Animal("Cow", "Cowshed", "Grass", "Moo");
-        Animal pig = new Animal("Pig", "Pigsty", "Vegetables", "Oink");
-        Animal horse = new Animal("Horse", "Stable", "Grass", "Neigh");
+        // Objects using parameterized constructor
+        FarmAnimal cow = new FarmAnimal(
+                "Cow", "Cowshed", "Grass");
 
+        FarmAnimal pig = new FarmAnimal(
+                "Pig", "Pigsty", "Corn");
+
+        FarmAnimal horse = new FarmAnimal(
+                "Horse", "Stable", "Hay");
+
+        // Display cow details
         cow.display();
-        pig.display();
-        horse.display();
-    }
-}
-
-Class Diagram Program – Customer and Orders
-
-class Customer {
-    String name;
-    String address;
-
-    Customer(String name, String address) {
-        this.name = name;
-        this.address = address;
-    }
-
-    void displayCustomer() {
-        System.out.println("Customer Name: " + name);
-        System.out.println("Address: " + address);
-    }
-}
-
-class Order {
-    String orderDate;
-    String orderNumber;
-
-    Order(String orderDate, String orderNumber) {
-        this.orderDate = orderDate;
-        this.orderNumber = orderNumber;
-    }
-
-    void displayOrder() {
-        System.out.println("Order Date: " + orderDate);
-        System.out.println("Order Number: " + orderNumber);
-    }
-}
-
-class SpecialOrder extends Order {
-    SpecialOrder(String date, String number) {
-        super(date, number);
-    }
-
-    void specialOffer() {
-        System.out.println("Special Order");
-    }
-}
-
-class NormalOrder extends Order {
-    NormalOrder(String date, String number) {
-        super(date, number);
-    }
-
-    void normalDelivery() {
-        System.out.println("Normal Order");
-    }
-}
-
-public class OrderDemo {
-    public static void main(String[] args) {
-
-        Customer c = new Customer("Rahul", "Hyderabad");
-
-        SpecialOrder s = new SpecialOrder("10-09-2026", "S101");
-        NormalOrder n = new NormalOrder("11-09-2026", "N101");
-
-        c.displayCustomer();
-
-        System.out.println("\nSpecial Order:");
-        s.displayOrder();
-        s.specialOffer();
-
-        System.out.println("\nNormal Order:");
-        n.displayOrder();
-        n.normalDelivery();
-    }
-}
-
-Constructor Overloading – Employee
-
-class Employee {
-    String name;
-    int id;
-    String designation;
-    double salary;
-    String promotionStatus;
-
-    // Constructor 1
-    Employee(String name, int id) {
-        this.name = name;
-        this.id = id;
-    }
-
-    // Constructor 2
-    Employee(String name, int id, String designation, double salary) {
-        this.name = name;
-        this.id = id;
-        this.designation = designation;
-        this.salary = salary;
-    }
-
-    // Constructor 3
-    Employee(String name, int id, String designation,
-             double salary, String promotionStatus) {
-        this.name = name;
-        this.id = id;
-        this.designation = designation;
-        this.salary = salary;
-        this.promotionStatus = promotionStatus;
-    }
-
-    void display() {
-        System.out.println("Name: " + name);
-        System.out.println("ID: " + id);
-        System.out.println("Designation: " + designation);
-        System.out.println("Salary: " + salary);
-        System.out.println("Promotion: " + promotionStatus);
+        cow.sound("Moo");
         System.out.println();
+
+        // Display pig details
+        pig.display();
+        pig.sound("Oink");
+        System.out.println();
+
+        // Display horse details
+        horse.display();
+        horse.sound("Neigh", 2);
     }
 }
 
-public class EmployeeDemo {
-    public static void main(String[] args) {
+Animal: Cow
+Lives in: Cowshed
+Eats: Grass
+Sound: Moo
 
-        Employee e1 = new Employee("Ravi", 101);
-        Employee e2 = new Employee("Priya", 102, "Developer", 40000);
-        Employee e3 = new Employee("Anu", 103, "Manager",
-                                   60000, "Promoted");
+Animal: Pig
+Lives in: Pigsty
+Eats: Corn
+Sound: Oink
 
-        e1.display();
-        e2.display();
-        e3.display();
-    }
-}
-
-
+Animal: Horse
+Lives in: Stable
+Eats: Hay
+Sound: Neigh
+Number of times: 2
