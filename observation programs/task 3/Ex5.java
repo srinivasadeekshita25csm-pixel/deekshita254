@@ -1,15 +1,11 @@
-package csm254;
+package exceptionex;
 
-public class SIOOB { 
-	    public static void main(String[] args) {
-
-	        try {
-	            String str = "Hello";
-
-	            System.out.println(str.charAt(10));
-	        }
-	        catch (java.lang.StringIndexOutOfBoundsException e) {
-	            System.out.println("String index is out of bounds.");
-	        }
-	    }
-	}
+public class Ex5 {
+    public static void main(String[] args) {
+        try {
+            int n = Integer.parseInt("abc");
+        } catch (NumberFormatException e) {
+            System.out.println("Number format error!");
+        }
+    }
+}
