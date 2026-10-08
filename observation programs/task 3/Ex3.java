@@ -1,16 +1,12 @@
-package exceptions;
+package exceptionex;
 
-public class ClassNotFound {
-	    public static void main(String[] args)
-	    {
-	        try
-	        {
-	            Class.forName("Student");
-	            System.out.println("Class found");
-	        }
-	        catch (ClassNotFoundException e)
-	        {
-	            System.out.println("Class not found");
-	        }
-	    }
-	}
+public class Ex3 {
+    public static void main(String[] args) {
+        try {
+            String s = null;
+            System.out.println(s.length());
+        } catch (NullPointerException e) {
+            System.out.println("Null pointer!");
+        }
+    }
+}
