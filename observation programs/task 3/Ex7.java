@@ -1,11 +1,12 @@
-package exceptions;
+package exceptionex;
 
-public class NP {
-	
-	    public static void main(String[] args) {
-
-	        String name = null;
-
-	        System.out.println(name.length());  // Exception
-	    }
-	}
+public class Ex7{
+    public static void main(String[] args) {
+        try {
+            String s = "Java";
+            System.out.println(s.charAt(10));
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("String index error!");
+        }
+    }
+}
