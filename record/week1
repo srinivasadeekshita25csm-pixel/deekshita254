@@ -1,12 +1,12 @@
-package javacore;
-
+package basics;
 import java.util.Scanner;
 
-//Base class for all accounts
+
 class Account {
- int accNo;        // account number
- double balance;   // money in account
- String type;      // savings or current
+ int accNo;
+ double balance;
+ String type;
+
 
  Account(int no, double bal, String t) {
      accNo = no;
@@ -14,14 +14,14 @@ class Account {
      type = t;
  }
 
- // deposit money
+ 
  void deposit(double amt) {
      balance += amt;
      System.out.println("Deposited: " + amt);
      System.out.println("Balance: " + balance);
  }
 
- // withdraw money
+ 
  void withdraw(double amt) {
      if (amt <= balance) {
          balance -= amt;
@@ -32,7 +32,7 @@ class Account {
      }
  }
 
- // transfer money to another account
+ 
  void transfer(Account other, double amt) {
      if (amt <= balance) {
          balance -= amt;
@@ -43,39 +43,44 @@ class Account {
      }
  }
 
- // show account info
+ 
  void show() {
-     System.out.println("Acc No: " + accNo);
-     System.out.println("Type  : " + type);
-     System.out.println("Bal   : " + balance);
+     System.out.println("Acc No : " + accNo);
+     System.out.println("Type   : " + type);
+     System.out.println("Bal    : " + balance);
  }
 }
 
+
 //Savings account class
 class SavingsAccount extends Account {
- double rate; // interest rate
+
+ double rate;
 
  SavingsAccount(int no, double bal, double r) {
      super(no, bal, "Savings");
      rate = r;
  }
 
+ 
  void calcInterest() {
      double interest = balance * rate / 100;
      System.out.println("Interest: " + interest);
  }
 }
 
-//Current account class
+
+
 class CurrentAccount extends Account {
- double limit; // overdraft limit
+
+ double limit;
 
  CurrentAccount(int no, double bal, double l) {
      super(no, bal, "Current");
      limit = l;
  }
 
- // overriding withdraw
+ 
  @Override
  void withdraw(double amt) {
      if (amt <= balance + limit) {
@@ -87,61 +92,96 @@ class CurrentAccount extends Account {
  }
 }
 
-//main class
+
+
 public class BankSystem {
+
  public static void main(String[] args) {
+
      Scanner sc = new Scanner(System.in);
 
-     SavingsAccount sAcc = new SavingsAccount(101, 5000, 5);
-     CurrentAccount cAcc = new CurrentAccount(201, 3000, 2000);
+     
+     SavingsAccount sAcc =
+             new SavingsAccount(101, 5000, 5);
+
+     CurrentAccount cAcc =
+             new CurrentAccount(201, 3000, 2000);
 
      int ch;
+
      do {
-         System.out.println("\n--- Bank Menu ---");
-         System.out.println("1. Deposit (Savings)");
-         System.out.println("2. Withdraw (Savings)");
-         System.out.println("3. Interest (Savings)");
-         System.out.println("4. Withdraw (Current)");
-         System.out.println("5. Transfer Savings -> Current");
-         System.out.println("6. Show Accounts");
-         System.out.println("7. Exit");
-         System.out.print("Choice: ");
+         System.out.println("\n===== BANK ACCOUNT SYSTEM =====");
+         System.out.println("1. Show Savings Account");
+         System.out.println("2. Deposit in Savings");
+         System.out.println("3. Withdraw from Savings");
+         System.out.println("4. Calculate Interest");
+         System.out.println("5. Show Current Account");
+         System.out.println("6. Deposit in Current");
+         System.out.println("7. Withdraw from Current");
+         System.out.println("8. Transfer Money");
+         System.out.println("9. Exit");
+
+         System.out.print("Enter choice: ");
          ch = sc.nextInt();
 
          switch (ch) {
+
              case 1:
-                 System.out.print("Amount: ");
-                 sAcc.deposit(sc.nextDouble());
+                 sAcc.show();
                  break;
+
              case 2:
-                 System.out.print("Amount: ");
-                 sAcc.withdraw(sc.nextDouble());
+                 System.out.print("Enter amount: ");
+                 double d1 = sc.nextDouble();
+                 sAcc.deposit(d1);
                  break;
+
              case 3:
+                 System.out.print("Enter amount: ");
+                 double w1 = sc.nextDouble();
+                 sAcc.withdraw(w1);
+                 break;
+
+             case 4:
                  sAcc.calcInterest();
                  break;
-             case 4:
-                 System.out.print("Amount: ");
-                 cAcc.withdraw(sc.nextDouble());
-                 break;
+
              case 5:
-                 System.out.print("Amount: ");
-                 sAcc.transfer(cAcc, sc.nextDouble());
-                 break;
-             case 6:
-                 System.out.println("Savings:");
-                 sAcc.show();
-                 System.out.println("Current:");
                  cAcc.show();
                  break;
-             case 7:
-                 System.out.println("Bye!");
+
+             case 6:
+                 System.out.print("Enter amount: ");
+                 double d2 = sc.nextDouble();
+                 cAcc.deposit(d2);
                  break;
+
+             case 7:
+                 System.out.print("Enter amount: ");
+                 double w2 = sc.nextDouble();
+                 cAcc.withdraw(w2);
+                 break;
+
+             case 8:
+                 System.out.print("Enter amount to transfer: ");
+                 double t = sc.nextDouble();
+                 sAcc.transfer(cAcc, t);
+                 break;
+
+             case 9:
+                 System.out.println("Thank you!");
+                 break;
+
              default:
-                 System.out.println("Wrong choice!");
+                 System.out.println("Invalid choice!");
          }
-     } while (ch != 7);
+
+     } while (ch != 9);
 
      sc.close();
- }
+ 
+}
+
+
+
 }
