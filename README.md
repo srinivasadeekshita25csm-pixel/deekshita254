@@ -1,6 +1,6 @@
 Java Programming Practices - Lab Portfolio
 ----------------------------------------------------------
-Student Name : Vijjapu Manasa
-Roll Number: A25126552261
+Student Name : Srinivasa Deekshita
+Roll Number: A25126552254
 Department: Computer Science & Engineering (AI & ML)
 Academic Year: 2026–2027 (Semester 3)
